@@ -45,6 +45,9 @@ int selectingCalcMode()
     else if (mode == 5) {
         return 5;
     }
+	else if (mode == 6) {
+		return 6;
+	}
     else {
         return 0;
     }
@@ -68,6 +71,10 @@ void divisionTwoOperands(float a, float b) {
 
 void modulusTwoOperands(float a, float b) {
     std::cout << "The modulus of " << a << " and " << b << " is " << fmod(a, b) << std::endl;
+}
+
+void divisionTwoOperands(float a, float b) {
+	std::cout << "The division of " << a << " and " << b << " is " << a / b << std::endl;
 }
 
 int main()
@@ -112,6 +119,16 @@ int main()
         std::cout << "Please enter the second number: ";
         std::cin >> b;
         modulusTwoOperands(a, b);
+    else if (selectedMode == 6) {
+		float a, b;
+		std::cout << "Please enter the first number: ";
+		std::cin >> a;
+		std::cout << "Please enter the second number: ";
+		std::cin >> b;
+		divisionTwoOperands(a, b);
+	}
+	else {
+		std::cout << "Invalid mode selected" << std::endl;
     }
 }
 
