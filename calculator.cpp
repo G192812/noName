@@ -15,120 +15,49 @@
 
 
 #include <iostream>
-#include <cmath>
 
 
 
-int selectingCalcMode()
-{
-    int mode;
-    std::cout << "mode lists : " << '\n';
-    std::cout << "1. Addition" << '\n';
-    std::cout << "2. Subtraction" << '\n';
-    std::cout << "3. Multiplication" << '\n';
-    std::cout << "4. Division" << '\n';
-    std::cout << "5. Modulus" << '\n';
-    std::cout << "Please enter the mode you want to use: ";
-    std::cin >> mode;
-    if (mode == 1) {
-        return 1;
-    }
-    else if (mode == 2) {
-        return 2;
-    }
-    else if (mode == 3) {
-        return 3;
-    }
-    else if (mode == 4) {
-        return 4;
-    }
-    else if (mode == 5) {
-        return 5;
-    }
-	else if (mode == 6) {
-		return 6;
+
+int add(int a, int b) {
+	return a + b;
+}
+
+int subtract(int a, int b) {
+	return a - b;
+}
+
+int multiply(int a, int b) {
+	return a * b;
+}
+
+int divide(int a, int b) {
+	return a / b;
+}
+
+int main() {
+	int a, b;
+	char op;
+	std::cout << "Enter the first number: ";
+	std::cin >> a;
+	std::cout << "Enter the operator: ";
+	std::cin >> op;
+	std::cout << "Enter the second number: ";
+	std::cin >> b;
+	if (op == '+') {
+		std::cout << add(a, b) << std::endl;
 	}
-    else {
-        return 0;
-    }
-}
-
-void additionTwoOperands(float a, float b) {
-    std::cout << "The sum of " << a << " and " << b << " is " << a + b << std::endl;
-}
-
-void subtractionTwoOperands(float a, float b) {
-    std::cout << "The subtraction of " << a << " and " << b << " is " << a - b << std::endl;
-}
-
-void multiplicationTwoOperands(float a, float b) {
-    std::cout << "The multiplication of " << a << " and " << b << " is " << a * b << std::endl;
-}
-
-void divisionTwoOperands(float a, float b) {
-    std::cout << "The division of " << a << " and " << b << " is " << a / b << std::endl;
-}
-
-void modulusTwoOperands(float a, float b) {
-    std::cout << "The modulus of " << a << " and " << b << " is " << fmod(a, b) << std::endl;
-}
-
-void divisionTwoOperands(float a, float b) {
-	std::cout << "The division of " << a << " and " << b << " is " << a / b << std::endl;
-}
-
-int main()
-{
-    int selectedMode{ selectingCalcMode() };
-    if (selectedMode == 1) {
-        float a, b;
-        std::cout << "Please enter the first number: ";
-        std::cin >> a;
-        std::cout << "Please enter the second number: ";
-        std::cin >> b;
-        additionTwoOperands(a, b);
-    }
-    else if (selectedMode == 2) {
-        float a, b;
-        std::cout << "Please enter the first number: ";
-        std::cin >> a;
-        std::cout << "Please enter the second number: ";
-        std::cin >> b;
-        subtractionTwoOperands(a, b);
-    }
-    else if (selectedMode == 3) {
-        float a, b;
-        std::cout << "Please enter the first number: ";
-        std::cin >> a;
-        std::cout << "Please enter the second number: ";
-        std::cin >> b;
-        multiplicationTwoOperands(a, b);
-    }
-    else if (selectedMode == 4) {
-        float a, b;
-        std::cout << "Please enter the first number: ";
-        std::cin >> a;
-        std::cout << "Please enter the second number: ";
-        std::cin >> b;
-        divisionTwoOperands(a, b);
-    }
-    else if (selectedMode == 5) {
-        float a, b;
-        std::cout << "Please enter the first number: ";
-        std::cin >> a;
-        std::cout << "Please enter the second number: ";
-        std::cin >> b;
-        modulusTwoOperands(a, b);
-    else if (selectedMode == 6) {
-		float a, b;
-		std::cout << "Please enter the first number: ";
-		std::cin >> a;
-		std::cout << "Please enter the second number: ";
-		std::cin >> b;
-		divisionTwoOperands(a, b);
+	else if (op == '-') {
+		std::cout << subtract(a, b) << std::endl;
+	}
+	else if (op == '*') {
+		std::cout << multiply(a, b) << std::endl;
+	}
+	else if (op == '/') {
+		std::cout << divide(a, b) << std::endl;
 	}
 	else {
-		std::cout << "Invalid mode selected" << std::endl;
-    }
+		std::cout << "Invalid operator" << std::endl;
+	}
+	return 0;
 }
-
