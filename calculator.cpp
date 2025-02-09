@@ -15,6 +15,9 @@
 
 
 #include <iostream>
+#include <cmath>
+
+
 
 int selectingCalcMode()
 {
@@ -111,3 +114,4 @@ int main()
         modulusTwoOperands(a, b);
     }
 }
+
